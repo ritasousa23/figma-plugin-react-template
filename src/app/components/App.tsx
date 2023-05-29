@@ -1,18 +1,18 @@
 import React from 'react';
-import logo from '../assets/logo.svg';
+// import logo from '../assets/logo.svg';
 import '../styles/ui.css';
 
 function App() {
-  const textbox = React.useRef<HTMLInputElement>(undefined);
+  // const textbox = React.useRef<HTMLInputElement>(undefined);
 
-  const countRef = React.useCallback((element: HTMLInputElement) => {
-    if (element) element.value = '5';
-    textbox.current = element;
-  }, []);
+  // const countRef = React.useCallback((element: HTMLInputElement) => {
+  //   if (element) element.value = '5';
+  //   textbox.current = element;
+  // }, []);
 
   const onCreate = () => {
-    const count = parseInt(textbox.current.value, 10);
-    parent.postMessage({ pluginMessage: { type: 'create-rectangles', count } }, '*');
+    // const count = parseInt(textbox.current.value, 10);
+    parent.postMessage({ pluginMessage: { type: 'create-rectangles' } }, '*');
   };
 
   const onCancel = () => {
@@ -31,13 +31,17 @@ function App() {
 
   return (
     <div>
-      <img src={logo} />
-      <h2>Rectangle Creator</h2>
-      <p>
+      {/* <img src={logo} /> */}
+      <h2>Immo Assistant_</h2>
+      <h3>Hey there 👋</h3>
+      <p>My name is Immo, and I am your assistant 😊 I'm happy to help you with creating a template for your Figma File 🚀</p>
+      <p>Use the button bellow to try me out!</p>
+      <br/>
+      {/* <p>
         Count: <input ref={countRef} />
-      </p>
+      </p> */}
       <button id="create" onClick={onCreate}>
-        Create
+        Create Template
       </button>
       <button onClick={onCancel}>Cancel</button>
     </div>
